@@ -2,10 +2,7 @@
 // This is only a SKELETON file for the 'Resistor Color Duo' exercise. It's been provided as a
 // convenience to get you started writing code faster.
 //
-
-export const decodedValue = (resistors) => {
-  var text = `${COLORS.indexOf(resistors[0])}${COLORS.indexOf(resistors[1])}`;
-  return parseInt(text);
+import { colorCode } from '../resistor-color/resistor-color';
+export const decodedValue = ([color1, color2]) => {
+  return colorCode(color1) * 10 + colorCode(color2)
 };
-
-export const COLORS = ["black","brown","red","orange","yellow","green","blue","violet","grey","white"];
