@@ -3,4 +3,11 @@
 // convenience to get you started writing code faster.
 //
 
-export const isPangram = (sentence) => sentence.replace(/(.)(?=.*\1)|[^a-z]/gi, "").length === 26;
+export const isPangram = (sentence) => {
+const lowercase_sentence = sentence.toLowerCase()
+const ALPHABET = [...'abcdefghijklmnopqrstuvwxyz'];
+
+const is_pangram = (letter) => lowercase_sentence.includes(letter);
+
+return ALPHABET.every(is_pangram);
+}
